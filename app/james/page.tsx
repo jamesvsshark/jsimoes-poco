@@ -1,7 +1,11 @@
-import Image from "next/image";
 import { Button } from "@/components/button";
 import { PanelCard } from "@/components/panel-card";
 import { SectionHeader } from "@/components/section-header";
+import { ThemeHeadshot } from "@/components/theme-headshot";
+
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const darkHeadshotSrc = `${basePath}/images/james-headshot-dark.png`;
+const lightHeadshotSrc = `${basePath}/images/james-headshot-light.png`;
 
 export default function JamesPage() {
   return (
@@ -16,19 +20,13 @@ export default function JamesPage() {
           </p>
         </div>
         <div className="overflow-hidden rounded-xl border border-border bg-panel">
-          <Image
-            src="/images/james-headshot-dark.png"
+          <ThemeHeadshot
+            darkSrc={darkHeadshotSrc}
+            lightSrc={lightHeadshotSrc}
             alt="James Simoes portrait"
             width={800}
             height={1000}
-            className="theme-dark-only h-full w-full object-cover object-top"
-          />
-          <Image
-            src="/images/james-headshot-light.png"
-            alt="James Simoes portrait"
-            width={800}
-            height={1000}
-            className="theme-light-only h-full w-full object-cover object-top"
+            className="h-full w-full object-cover object-top"
           />
         </div>
       </section>
