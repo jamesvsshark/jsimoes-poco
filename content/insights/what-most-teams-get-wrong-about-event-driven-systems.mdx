@@ -1,0 +1,43 @@
+---
+title: "What most teams get wrong about event-driven systems"
+description: "Event-driven architecture solves coupling problems, but introduces coordination problems."
+date: "2026-04-10"
+---
+
+Event-driven systems do not remove complexity. They move complexity into coordination.
+
+## The real problem
+
+Teams usually think messaging is about throughput and decoupling. That is only half of the story.
+
+The actual challenge is designing for correctness under retries, reordering, consumer lag, and partial outages.
+
+## Design flaws
+
+### Events without ownership
+
+When no team owns event definitions as contracts, topics drift. Producers evolve payloads casually, consumers compensate with fragile parsing, and reliability erodes over time.
+
+### Conflating domain events with integration events
+
+Not every internal state change should be broadcast externally. Mixing these concerns creates noisy streams and accidental coupling across services.
+
+### Ignoring idempotency
+
+In production systems, duplicate delivery is normal behavior. Systems that treat duplicates as rare edge cases eventually create financial or operational inconsistencies.
+
+## Failure modes at scale
+
+At scale, the dangerous failures are slow failures: consumer lag, poisoned messages, dead-letter backlogs, and stale derived views that look healthy from the outside.
+
+Observability must include end-to-end lag, per-consumer error rates, replay volume, and contract version adoption. Topic-level metrics are not enough.
+
+## Real constraints and tradeoffs
+
+Ordering guarantees cost throughput. Fine-grained partitioning improves parallelism but complicates debugging and replay strategy. Long retention helps recovery but increases operational burden.
+
+In real systems, the right answer is contextual: optimize for recoverability first, then optimize for speed.
+
+## Takeaway
+
+Event-driven architecture is not a transport choice. It is a data coordination model. If you do not design for failure and replay from day one, the system will eventually design it for you.

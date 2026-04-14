@@ -1,0 +1,41 @@
+---
+title: "What breaks at scale (and why)"
+description: "Scale failures are usually coordination failures disguised as technical ones."
+date: "2026-03-22"
+---
+
+Scale does not break systems by itself. It exposes assumptions that were always wrong.
+
+## The real problem
+
+Most teams assume scale failure comes from insufficient compute. Sometimes it does, but more often the break happens in data flow coordination, ownership boundaries, and recovery strategy.
+
+## Common breakpoints
+
+### Coupled dependencies
+
+At scale, tight synchronous chains amplify tail latency and create cascading failure domains.
+
+### Inconsistent data contracts
+
+When producers and consumers evolve independently without compatibility discipline, integration failures become continuous background noise.
+
+### Operational blind spots
+
+Systems can look available while delivering stale or incorrect outputs. Availability without correctness is a false positive.
+
+## Failure modes in production
+
+In production systems, incidents often start as minor drift: queue depth increases, retries climb, and processing delay stretches. Without proactive guardrails, this drift becomes customer-visible failure.
+
+The teams that recover fastest are not the ones with the most dashboards. They are the ones with clear runbooks, reversible changes, and explicit ownership during incidents.
+
+## Practical tradeoffs
+
+At scale, consistency, latency, cost, and operability form a four-way negotiation. Choosing one aggressively will tax the others.
+
+The pragmatic approach is to optimize for predictable degradation: when things fail, fail in ways operators can reason about.
+
+## Takeaway
+
+What breaks at scale is usually not infrastructure first. It is system design assumptions that were never validated under real load and real coordination pressure.

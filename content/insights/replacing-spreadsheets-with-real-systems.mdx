@@ -1,0 +1,43 @@
+---
+title: "Replacing spreadsheets with real systems"
+description: "Most spreadsheet problems are workflow design problems, not tooling problems."
+date: "2026-04-05"
+---
+
+Spreadsheets are not the enemy. They are a symptom of missing operating systems.
+
+## The real problem
+
+Most teams believe the issue is that spreadsheets are "manual." The deeper issue is that business logic lives in cells, ownership lives in inboxes, and decisions happen outside the system.
+
+The result is invisible state and inconsistent execution.
+
+## Where spreadsheet-driven operations break
+
+### Hidden logic
+
+Critical formulas and exceptions are embedded in tabs that only one person understands. In real workflows, this is single-point-of-failure architecture.
+
+### No explicit state model
+
+Rows move from "draft" to "approved" to "done" through human memory or chat messages, not enforceable transitions.
+
+### Weak auditability
+
+When the same data is copied across files, teams cannot answer basic questions: who changed what, when, and why.
+
+## Designing the replacement correctly
+
+In production systems, replacing spreadsheets should start with state design, not UI design.
+
+Define the entities, state transitions, validation rules, and ownership boundaries first. Build automation only after those foundations are stable.
+
+Use human-in-the-loop checkpoints where ambiguity is high. Full automation before process clarity usually creates faster failure.
+
+## Business impact in real operations
+
+When workflows are encoded explicitly, cycle times shrink, rework decreases, and leaders trust reporting again. Teams stop spending time reconciling data and start using data to decide.
+
+## Takeaway
+
+Replacing spreadsheets is not a digitization project. It is an operating model project.

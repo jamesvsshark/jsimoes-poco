@@ -1,0 +1,43 @@
+---
+title: "Designing systems that actually match workflows"
+description: "Most systems fail because they model software objects, not real work."
+date: "2026-03-30"
+---
+
+Most systems fail because they optimize for technical elegance before operational reality.
+
+## The real problem
+
+Teams often think they have a tooling issue. In practice, they have a modeling issue.
+
+The system reflects how engineers group code, not how operators execute work under constraints.
+
+## Workflow mismatch patterns
+
+### Missing handoff states
+
+Real work includes waiting, review, rework, and escalation. Systems that skip these states force teams to invent side channels.
+
+### Wrong unit of work
+
+If the system tracks tasks but the business runs on jobs, batches, or exceptions, every dashboard will look clean while operations stay messy.
+
+### No ownership boundaries
+
+When responsibility is implicit, every delay becomes "someone else is handling it." At scale, this destroys throughput.
+
+## Real-world design constraints
+
+In real workflows, latency tolerance differs by step. Some transitions can batch overnight; others need immediate response.
+
+Design should reflect that reality with asynchronous and synchronous paths chosen intentionally, not by framework defaults.
+
+At scale, good systems make constraints visible: blocked reasons, queue age, retry counts, and SLA risk.
+
+## Tradeoffs worth making
+
+You usually trade local convenience for global consistency. That tradeoff is worthwhile in multi-team operations, where hidden inconsistency is more expensive than extra clicks.
+
+## Takeaway
+
+Systems work when they model work as it happens, not as we wish it happened.
