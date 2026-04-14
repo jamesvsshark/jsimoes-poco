@@ -15,4 +15,5 @@ This repository is public and must remain presentation-ready.
 - Prefer polished, reviewable commits on clean branches with clear scope and rationale.
 - Maintain professional copy, comments, and docs suitable for public viewing.
 - When integrations or sharing behavior change, update AGENTS guidance and project scripts/docs to keep standards enforceable.
+- Preserve a clean mobile experience: navigation, CTA visibility, and content hierarchy must be validated on small screens.
 <!-- END:public-repo-safety-rules -->
