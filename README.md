@@ -26,6 +26,11 @@ NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY=your_web3forms_key
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
 ```
 
+For GitHub Actions deployment, add:
+
+- Repository secret: `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY`
+- Repository variable: `NEXT_PUBLIC_SITE_URL` (optional override)
+
 ## Build static output
 
 ```bash
