@@ -16,4 +16,5 @@ This repository is public and must remain presentation-ready.
 - Maintain professional copy, comments, and docs suitable for public viewing.
 - When integrations or sharing behavior change, update AGENTS guidance and project scripts/docs to keep standards enforceable.
 - Preserve a clean mobile experience: navigation, CTA visibility, and content hierarchy must be validated on small screens.
+- When using theme-specific media, maintain both dark/light variants and verify visual consistency in each theme.
 <!-- END:public-repo-safety-rules -->

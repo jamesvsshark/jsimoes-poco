@@ -76,3 +76,19 @@ body {
   text-decoration-color: var(--muted);
   text-underline-offset: 0.2rem;
 }
+
+.theme-dark-only {
+  display: block;
+}
+
+.theme-light-only {
+  display: none;
+}
+
+[data-theme="light"] .theme-dark-only {
+  display: none;
+}
+
+[data-theme="light"] .theme-light-only {
+  display: block;
+}
