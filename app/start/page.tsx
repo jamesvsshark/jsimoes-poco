@@ -3,6 +3,7 @@ import { SectionHeader } from "@/components/section-header";
 const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ?? "";
 const redirectBase = process.env.NEXT_PUBLIC_SITE_URL ?? "";
 const redirectUrl = redirectBase ? `${redirectBase}/thank-you` : "/thank-you";
+const isWeb3FormsConfigured = accessKey.length > 0;
 
 export default function StartPage() {
   return (
@@ -24,6 +25,8 @@ export default function StartPage() {
         className="space-y-4 rounded-xl border border-border bg-panel p-6"
       >
         <input type="hidden" name="access_key" value={accessKey} />
+        <input type="hidden" name="subject" value="POCO Intake Submission" />
+        <input type="hidden" name="from_name" value="POCO Site Intake" />
         <input type="hidden" name="redirect" value={redirectUrl} />
         <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} />
 
@@ -59,10 +62,18 @@ export default function StartPage() {
 
         <button
           type="submit"
+          disabled={!isWeb3FormsConfigured}
           className="rounded-md bg-accent px-4 py-2 text-sm font-medium text-foreground hover:bg-violet-500"
         >
-          Submit Intake
+          {isWeb3FormsConfigured ? "Submit Intake" : "Intake form unavailable"}
         </button>
+
+        {!isWeb3FormsConfigured ? (
+          <p className="text-xs text-muted">
+            Missing `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY`. Set it in local environment and GitHub
+            repository secrets to enable submissions.
+          </p>
+        ) : null}
       </form>
     </div>
   );
