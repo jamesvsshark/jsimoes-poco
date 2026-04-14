@@ -33,3 +33,24 @@ npm run build
 ```
 
 Static files are written to `out/`.
+
+## Public repo safety checks
+
+Run a full sensitive-content scan:
+
+```bash
+npm run security:scan
+```
+
+Run staged-file checks (recommended before commit):
+
+```bash
+npm run precommit:check
+```
+
+Optional local git hook setup:
+
+```bash
+chmod +x .githooks/pre-commit
+git config core.hooksPath .githooks
+```

@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "security:scan": "node scripts/security-scan.mjs",
+    "security:scan:staged": "node scripts/security-scan.mjs --staged",
+    "precommit:check": "npm run security:scan:staged && npm run lint"
   },
   "dependencies": {
     "@next/mdx": "^16.2.3",
