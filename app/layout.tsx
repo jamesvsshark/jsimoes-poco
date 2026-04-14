@@ -15,10 +15,46 @@ const jetBrainsMono = JetBrains_Mono({
   subsets: ["latin"],
 });
 
+const resolvedSiteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
+  "https://jamesvsshark.github.io/jsimoes-poco";
+const shareImageUrl = `${resolvedSiteUrl}/og/poco-share.svg`;
+
 export const metadata: Metadata = {
-  title: "POCO | Systems That Run Business Operations",
+  metadataBase: new URL(resolvedSiteUrl),
+  title: {
+    default: "POCO | Systems That Run Business Operations",
+    template: "%s | POCO",
+  },
   description:
     "POCO designs and ships operational systems that remove workflow drag and improve decision velocity.",
+  applicationName: "POCO",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    url: resolvedSiteUrl,
+    siteName: "POCO",
+    title: "POCO | Systems That Run Business Operations",
+    description:
+      "POCO designs and ships operational systems that remove workflow drag and improve decision velocity.",
+    images: [
+      {
+        url: shareImageUrl,
+        width: 1200,
+        height: 630,
+        alt: "POCO systems consultancy",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "POCO | Systems That Run Business Operations",
+    description:
+      "POCO designs and ships operational systems that remove workflow drag and improve decision velocity.",
+    images: [shareImageUrl],
+  },
 };
 
 const navItems = [

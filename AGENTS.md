@@ -14,4 +14,6 @@ This repository is public and must remain presentation-ready.
 - Keep commit history clean and intentional: no "WIP", "tmp", or ambiguous commit messages.
 - Prefer polished, reviewable commits on clean branches with clear scope and rationale.
 - Maintain professional copy, comments, and docs suitable for public viewing.
+- When integrations or sharing behavior change, update AGENTS guidance and project scripts/docs to keep standards enforceable.
+- Keep social sharing metadata and preview assets current and production-valid after messaging updates.
 <!-- END:public-repo-safety-rules -->
