@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Script from "next/script";
 import { Inter, JetBrains_Mono } from "next/font/google";
-import { ThemeToggle } from "@/components/theme-toggle";
+import { SiteHeader } from "@/components/site-header";
 import "./globals.css";
 
 const inter = Inter({
@@ -80,21 +79,7 @@ export default function RootLayout({
           })();
         `}</Script>
         <div className="mx-auto flex min-h-screen w-full max-w-6xl flex-col px-6 md:px-10">
-          <header className="flex items-center justify-between border-b border-border py-6">
-            <Link href="/" className="text-lg font-semibold tracking-tight">
-              POCO
-            </Link>
-            <div className="flex items-center gap-5">
-              <nav className="flex items-center gap-5 text-sm text-secondary">
-                {navItems.map((item) => (
-                  <Link key={item.href} href={item.href} className="hover:text-foreground">
-                    {item.label}
-                  </Link>
-                ))}
-              </nav>
-              <ThemeToggle />
-            </div>
-          </header>
+          <SiteHeader navItems={navItems} />
           <main className="flex-1 py-12">{children}</main>
           <footer className="border-t border-border py-8 text-sm text-muted">
             Built for selective systems engagements.
