@@ -63,7 +63,7 @@ export default function StartPage() {
         <button
           type="submit"
           disabled={!isWeb3FormsConfigured}
-          className="rounded-md bg-accent px-4 py-2 text-sm font-medium text-foreground hover:bg-violet-500"
+          className="rounded-md bg-accent px-4 py-2 text-sm font-medium text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] transition-colors hover:bg-violet-700 disabled:cursor-not-allowed disabled:opacity-60"
         >
           {isWeb3FormsConfigured ? "Submit Intake" : "Intake form unavailable"}
         </button>

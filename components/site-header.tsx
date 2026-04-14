@@ -35,16 +35,19 @@ export function SiteHeader({ navItems }: SiteHeaderProps) {
         <ThemeToggle />
       </div>
 
-      <button
-        type="button"
-        className="inline-flex items-center rounded-md border border-border px-3 py-1.5 font-mono text-xs uppercase tracking-[0.1em] text-secondary hover:text-foreground md:hidden"
-        aria-expanded={isMenuOpen}
-        aria-controls="mobile-menu-panel"
-        aria-label="Toggle navigation menu"
-        onClick={() => setIsMenuOpen((prev) => !prev)}
-      >
-        Menu
-      </button>
+      <div className="flex items-center gap-2 md:hidden">
+        <ThemeToggle />
+        <button
+          type="button"
+          className="inline-flex items-center rounded-md border border-border px-3 py-1.5 font-mono text-xs uppercase tracking-[0.1em] text-secondary hover:text-foreground"
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-menu-panel"
+          aria-label="Toggle navigation menu"
+          onClick={() => setIsMenuOpen((prev) => !prev)}
+        >
+          Menu
+        </button>
+      </div>
 
       {isMenuOpen ? (
         <div className="fixed inset-0 z-50 md:hidden" role="dialog" aria-modal="true">
@@ -58,8 +61,7 @@ export function SiteHeader({ navItems }: SiteHeaderProps) {
             id="mobile-menu-panel"
             className="absolute right-0 top-0 flex h-full w-[82vw] max-w-sm flex-col border-l border-border bg-background p-6"
           >
-            <div className="mb-8 flex items-center justify-between">
-              <p className="font-mono text-xs uppercase tracking-[0.1em] text-muted">Navigation</p>
+            <div className="mb-6 flex items-center justify-end">
               <button
                 type="button"
                 className="rounded-md border border-border px-2 py-1 text-xs text-secondary hover:text-foreground"
@@ -83,9 +85,6 @@ export function SiteHeader({ navItems }: SiteHeaderProps) {
                 </Link>
               ))}
             </nav>
-            <div className="mt-auto border-t border-border pt-5">
-              <ThemeToggle />
-            </div>
           </aside>
         </div>
       ) : null}
