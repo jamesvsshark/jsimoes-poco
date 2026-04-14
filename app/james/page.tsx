@@ -17,11 +17,11 @@ export default function JamesPage() {
         </div>
         <div className="overflow-hidden rounded-xl border border-border bg-panel">
           <Image
-            src="/images/james-placeholder.svg"
-            alt="Founder portrait placeholder"
+            src="/images/james-headshot.png"
+            alt="James Simoes portrait"
             width={800}
             height={1000}
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover object-top"
           />
         </div>
       </section>
